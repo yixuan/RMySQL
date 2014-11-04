@@ -357,6 +357,8 @@ RS_MySQL_createConnection(Mgr_Handle *mgrHandle, RS_MySQL_conParams *conParams)
         RS_DBI_errorMessage(buf, RS_DBI_ERROR);
     }
 
+    mysql_set_character_set(my_connection, "utf8");
+
   
     /* MySQL connections can only have 1 result set open at a time */  
     conHandle = RS_DBI_allocConnection(mgrHandle, (Sint) 1); 
